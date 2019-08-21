@@ -1,15 +1,26 @@
 {
   "name": "AmessageProject",
   "version": "0.0.1",
+  "description": "iOS's Message App written in React Native for practive purpose.",
+  "mian": "index.js",
   "private": true,
   "scripts": {
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
+  "author": "zhoujun0920",
+  "license": "MIT",
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.5"
+    "react-native": "0.60.5",
+    "alt": "^0.18.6",
+    "moment": "^2.18.1",
+    "react-native-navbar": "^1.7.1",
+    "react-native-router-flux": "^3.39.2",
+    "react-native-simple-store": "^1.2.0",
+    "react-native-vector-icons": "^4.2.0",
+    "rn-viewpager": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
