@@ -35,6 +35,7 @@ class InfoCell extends React.Component {
         <TextInput
           style={styles.infoTextInput}
           onChangeText={this.props.onChangeText}
+          onFocus={this.props.onFocus}
           placeholder={this.state.hint}
           autoCapitalize={'none'}
         />

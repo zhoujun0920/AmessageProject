@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-  TouchableHighlight,
+  Button,
+  TouchableOpacity,
   Keyboard,
   Platform,
   Text,
@@ -9,8 +10,11 @@ import {
   View
 } from 'react-native';
 
+//3rd party libraries
+import {Actions} from 'react-native-router-flux';
+
 // View Elements
-import InfoCell from './elements/info-cell';
+import InfoCell from '../signin/elements/info-cell';
 
 const styles = StyleSheet.create({
   safeAreaView: {
@@ -60,23 +64,15 @@ const styles = StyleSheet.create({
   }
 })
 
-class LoginView extends React.Component {
+class SignUpView extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
+    this.setState({
       email: "",
-      password: ""
-    }
+      password: "",
+    })
     this.onChangeEmail = this.onChangeEmail.bind(this)
     this.onChangePassword = this.onChangePassword.bind(this)
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillUnMount() {
-
   }
 
   onChangeEmail(text) {
@@ -91,33 +87,35 @@ class LoginView extends React.Component {
     })
   }
 
-  onPressSignIn() {
+  onPressSignUp() {
     console.log(this.state.email)
     console.log(this.state.password)
     Keyboard.dismiss()
   }
 
   render() {
-    return (
+    return(
       <View style={styles.container}>
         {Platform.OS === 'ios' && <View style={styles.statusBar} />}
         <SafeAreaView style={styles.safeAreaView}>
-          <View style={styles.headerView}>
-            <Text style={styles.headerText}>A Message Project</Text>
+          <View style={{alignItems: 'flex-start', paddingLeft: 10, paddingBottom: 20}}>
+            <Button
+              title={'Back'}
+              onPress={Actions.pop}
+            />
           </View>
           <View style={{flex:1.5}}>
             <InfoCell hint={"Email"} onChangeText={this.onChangeEmail}/>
             <InfoCell hint={"Password"} onChangeText={this.onChangePassword}/>
           </View>
           <View style={{alignItems: 'center'}}>
-            <TouchableHighlight
+            <TouchableOpacity
               style={styles.signInButton}
-              onPress={this.onPressSignIn.bind(this)}
             >
               <Text style={styles.signInText}>
-                Sign In
+                Sign Up
               </Text>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
           <View style={styles.bottomView} />
         </SafeAreaView>
@@ -126,4 +124,4 @@ class LoginView extends React.Component {
   }
 }
 
-export default LoginView
+export default SignUpView
