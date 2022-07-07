@@ -14,7 +14,7 @@
   "dependencies": {
     "acorn": "^7.0.0",
     "alt": "^0.18.6",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "native-base": "^2.13.6",
     "react": "16.8.6",
     "react-native": "0.60.5",
